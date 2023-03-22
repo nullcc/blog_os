@@ -61,7 +61,7 @@ impl Writer {
         match byte {
             b'\n' => self.new_line(),
             byte => {
-                if (self.column_position >= BUFFER_WIDTH) {
+                if self.column_position >= BUFFER_WIDTH {
                     self.new_line();
                 }
                 let row = BUFFER_HEIGHT - 1;
